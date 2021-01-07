@@ -56,17 +56,7 @@ void app_process_action(RAIL_Handle_t rail_handle)
 /******************************************************************************
  * RAIL callback, called if a RAIL event occurs
  *****************************************************************************/
-void sl_rail_app_on_event(RAIL_Handle_t rail_handle, RAIL_Events_t events)
-{
-  (void) rail_handle;
-  (void) events;
 
-  ///////////////////////////////////////////////////////////////////////////
-  // Put your RAIL event handling here!                                    //
-  // This is called from ISR context.                                      //
-  // Do not call blocking functions from here!                             //
-  ///////////////////////////////////////////////////////////////////////////
-}
 
 // -----------------------------------------------------------------------------
 //                          Static Function Definitions
