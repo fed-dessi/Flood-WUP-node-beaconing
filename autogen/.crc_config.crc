@@ -1,0 +1,18 @@
+#CRC Codes for initially generated config files -- do not modify!
+#Thu Jan 07 12:09:36 CET 2021
+sl_device_init_lfxo_config.h=-1054644319
+sl_mx25_flash_shutdown_config.h=1547543876
+sl_sleeptimer_config.h=-386016533
+sl_device_init_dcdc_config.h=-870566101
+sl_device_init_emu_config.h=-1292589747
+sl_rail_util_pa_config.h=-1894391057
+sl_rail_util_init_config.h=1464017359
+sl_uartdrv_usart_vcom_config.h=1706340396
+rail/radio_settings.radioconf=1938397198
+FreeRTOSConfig.h=2044837289
+sl_device_init_hfxo_config.h=1759380754
+uartdrv_config.h=-941504238
+sl_board_control_config.h=1056508041
+dmadrv_config.h=145163010
+sl_power_manager_config.h=250630329
+sl_memory_config.h=687128566

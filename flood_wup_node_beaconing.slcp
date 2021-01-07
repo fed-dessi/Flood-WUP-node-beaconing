@@ -1,0 +1,43 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+include:
+- path: ''
+  file_list:
+  - {path: app_init.h}
+  - {path: app_process.h}
+package: Flex
+configuration:
+- condition: [iostream_usart]
+  name: SL_IOSTREAM_USART_VCOM_FLOW_CONTROL_TYPE
+  value: usartHwFlowControlNone
+description: The RAIL Empty project is a barebone RAIL app that can be a basis of
+  a proprietary solutions. This comes prepared with a Single PHY radio configurator
+  and a basic callback function for RAIL.
+label: flood wup node beaconing
+source:
+- {path: main.c}
+- {path: app_init.c}
+- {path: app_process.c}
+project_name: flood_wup_node_beaconing
+quality: production
+component:
+- {id: EFR32MG12P433F1024GM68}
+- instance: [vcom]
+  id: uartdrv_usart
+- {id: radio_config_simple_rail_singlephy}
+- {id: sl_system}
+- {id: brd4001a}
+- {id: brd4170a}
+- {id: mpu}
+- {id: rail_util_init}
+- {id: rail_util_pa}
+- {id: device_init}
+- {id: freertos_heap_4}
+tag: ['hardware:component:pti', 'hardware:device:flash:41', 'hardware:device:!module',
+  'hardware:rf:count:1+', 'hardware:device:ram:9']
+category: RAIL Examples
+toolchain_settings:
+- {value: debug, option: optimize}
+ui_hints: {}
+requires:
+- {name: a_radio_config}
+
