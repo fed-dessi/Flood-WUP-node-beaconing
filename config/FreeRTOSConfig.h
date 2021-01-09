@@ -18,7 +18,7 @@ extern "C" {
 /********************** Configuration of FreeRTOS ****************************/
 
 /* Implement FreeRTOS configASSERT as emlib assert */
-#define configASSERT(x)       EFM_ASSERT(x)
+#define configASSERT(x)       if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for( ;; ); }//EFM_ASSERT(x)
 
 /* Modes of operations of operation system*/
 #define configUSE_PREEMPTION       (1)
@@ -67,7 +67,7 @@ extern "C" {
 
 /* Interrupt nesting behaviour configuration. */
 #define configKERNEL_INTERRUPT_PRIORITY           (255)
-#define configMAX_SYSCALL_INTERRUPT_PRIORITY      (96)   /* equivalent to 0x60, or priority 3. */
+#define configMAX_SYSCALL_INTERRUPT_PRIORITY      (31)   /* equivalent to 0x60, or priority 3. */
 
 /* Optional functions - most linkers will remove unused functions anyway. */
 #define INCLUDE_vTaskPrioritySet                  (1)
