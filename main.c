@@ -264,12 +264,16 @@ void receiverTaskFunction (void *rt){
           RAIL_ReleaseRxPacket (rail_handle, packet_handle);
 
           if(rxPacket.header.wupSeq == Wb){
-              hopCount = rxPacket.header.hopCount + 1;
+              if(hopCount == 0 || rxPacket.header.hopCount != hopCount && rxPacket.header.hopCount < hopCount){
+                  hopCount = rxPacket.header.hopCount + 1;
 
-              snprintf (&transmitterBuffer, 100, "\r\nBeacon Packet received:\r\nWUP Sequence: %u\r\nNew Hop Count: %lu\r\n", rxPacket.header.wupSeq, hopCount);
-              while (ECODE_OK != UARTDRV_TransmitB (sl_uartdrv_usart_vcom_handle, &transmitterBuffer[0], strlen (transmitterBuffer)));
+                  snprintf (&transmitterBuffer, 100, "\r\nBeacon Packet received:\r\nWUP Sequence: %u\r\nNew Hop Count: %lu\r\n", rxPacket.header.wupSeq, hopCount);
+                  while (ECODE_OK != UARTDRV_TransmitB (sl_uartdrv_usart_vcom_handle, &transmitterBuffer[0], strlen (transmitterBuffer)));
 
-              xQueueSend(transmitterQueueHandle, (void *)&rxPacket, 0);
+                  rxPacket.header.hopCount = hopCount;
+
+                  xQueueSend(transmitterQueueHandle, (void *)&rxPacket, 0);
+              }
           }
 
           if(rxPacket.header.wupSeq == Wd && rxPacket.header.hopCount == hopCount){
@@ -290,6 +294,11 @@ void receiverTaskFunction (void *rt){
 
                   snprintf (&transmitterBuffer, 100, "\r\nFlood Data Packet received:\r\nHop Count: %lu\r\nSequence Number: %lu\r\n", rxPacket.header.hopCount, rxPacket.header.pktSeq);
                   while (ECODE_OK != UARTDRV_TransmitB (sl_uartdrv_usart_vcom_handle, &transmitterBuffer[0], strlen (transmitterBuffer)));
+
+                  rxPacket.header.hopCount =+ 1;
+                  //TODO: Implement a better wait timer (maybe check if the retransmission timer is running, then wait X time, where X = time required to transmit a packet + 20ms)
+                  //wait 500ms to see if we receive a new packet
+                  sl_sleeptimer_delay_millisecond(500);
 
                   xQueueSend(transmitterQueueHandle, (void *)&rxPacket, 0);
               } else if(rxPacket.header.pktSeq > pktSequenceNumber + 1 && !isRetransmissionTimerRunning){
