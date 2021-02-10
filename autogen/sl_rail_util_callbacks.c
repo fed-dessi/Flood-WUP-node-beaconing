@@ -32,65 +32,72 @@
  ******************************************************************************/
  
 #include "em_common.h"
-#include "sl_rail_util_init.h"
+#include "rail.h"
+#include "sl_flex_assert.h"
 #include "pa_conversions_efr32.h"
+
+// Provide weak function called by callback RAILCb_AssertFailed.
+SL_WEAK
+void sl_rail_util_on_assert_failed(RAIL_Handle_t rail_handle,
+                                   RAIL_AssertErrorCodes_t error_code)
+{
+  APP_ASSERT(false,
+             "rail_handle: 0x%X, error_code: %d",
+             rail_handle,
+             error_code);
+}
 
 // Note: RAILCb_AssertFailed is called directly by the RAIL library when
 // needed, so maintain this exact function signature.
 void RAILCb_AssertFailed(RAIL_Handle_t rail_handle,
                          RAIL_AssertErrorCodes_t error_code)
 {
-
-  sl_rail_app_on_assert_failed(rail_handle, error_code);
+  sl_rail_util_on_assert_failed(rail_handle, error_code);
 }
 
+// Provide weak function called by callback sli_rail_util_on_rf_ready.
 SL_WEAK
-void sl_rail_app_on_assert_failed(RAIL_Handle_t rail_handle,
-                                  RAIL_AssertErrorCodes_t error_code)
-{
-  (void) rail_handle;
-  (void) error_code;
-}
-
 void sl_rail_util_on_rf_ready(RAIL_Handle_t rail_handle)
 {
-
-  sl_rail_app_on_rf_ready(rail_handle);
-}
-
-SL_WEAK
-void sl_rail_app_on_rf_ready(RAIL_Handle_t rail_handle)
-{
   (void) rail_handle;
 }
 
-void sl_rail_util_on_channel_config_change(RAIL_Handle_t rail_handle,
-                                           const RAIL_ChannelConfigEntry_t *entry)
+// Internal-only callback set up through call to RAIL_Init().
+void sli_rail_util_on_rf_ready(RAIL_Handle_t rail_handle)
 {
-  sl_rail_util_pa_on_channel_config_change(rail_handle, entry);
-
-  sl_rail_app_on_channel_config_change(rail_handle, entry);
+  sl_rail_util_on_rf_ready(rail_handle);
 }
 
+// Provide weak function called by callback
+// sli_rail_util_on_channel_config_change.
 SL_WEAK
-void sl_rail_app_on_channel_config_change(RAIL_Handle_t rail_handle,
-                                          const RAIL_ChannelConfigEntry_t *entry)
+void sl_rail_util_on_channel_config_change(RAIL_Handle_t rail_handle,
+                                           const RAIL_ChannelConfigEntry_t *entry)
 {
   (void) rail_handle;
   (void) entry;
 }
 
+// Internal-only callback set up through call to RAIL_ConfigChannels().
+void sli_rail_util_on_channel_config_change(RAIL_Handle_t rail_handle,
+                                            const RAIL_ChannelConfigEntry_t *entry)
+{
+  sl_rail_util_pa_on_channel_config_change(rail_handle, entry);
+  sl_rail_util_on_channel_config_change(rail_handle, entry);
+}
+
+// Provide weak function called by callback sli_rail_util_on_event.
+SL_WEAK
 void sl_rail_util_on_event(RAIL_Handle_t rail_handle,
                            RAIL_Events_t events)
 {
-
-  sl_rail_app_on_event(rail_handle, events);
-}
-
-SL_WEAK
-void sl_rail_app_on_event(RAIL_Handle_t rail_handle,
-                          RAIL_Events_t events)
-{
   (void) rail_handle;
   (void) events;
+}
+
+// Internal-only callback set up through call to RAIL_Init().
+void sli_rail_util_on_event(RAIL_Handle_t rail_handle,
+                            RAIL_Events_t events)
+{
+  sl_rail_util_on_event(rail_handle, events);
 }

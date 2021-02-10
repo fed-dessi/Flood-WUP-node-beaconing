@@ -21,7 +21,7 @@
         </input>
         <input>
           <key>AGC_POWER_TARGET</key>
-          <value>int:-8</value>
+          <value>null</value>
         </input>
         <input>
           <key>AGC_SCHEME</key>
@@ -29,7 +29,7 @@
         </input>
         <input>
           <key>AGC_SETTLING_DELAY</key>
-          <value>int:39</value>
+          <value>null</value>
         </input>
         <input>
           <key>AGC_SPEED</key>
@@ -49,11 +49,11 @@
         </input>
         <input>
           <key>BANDWIDTH_HZ</key>
-          <value>int:2400000</value>
+          <value>null</value>
         </input>
         <input>
           <key>BASE_FREQUENCY_HZ</key>
-          <value>long:2400000000</value>
+          <value>long:868000000</value>
         </input>
         <input>
           <key>BAUDRATE_TOL_PPM</key>
@@ -61,7 +61,7 @@
         </input>
         <input>
           <key>BITRATE</key>
-          <value>int:2000000</value>
+          <value>int:500000</value>
         </input>
         <input>
           <key>CHANNEL_SPACING_HZ</key>
@@ -97,7 +97,7 @@
         </input>
         <input>
           <key>DEVIATION</key>
-          <value>int:1000000</value>
+          <value>int:125000</value>
         </input>
         <input>
           <key>DIFF_ENCODING_MODE</key>
@@ -500,40 +500,43 @@
           <value>int:38400000</value>
         </input>
       </profile_inputs>
-      <metadata>{&quot;errors&quot;:{},&quot;warnings&quot;:{},&quot;disabledGizmos&quot;:{&quot;frame_type_2_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_2_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_2_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_length&quot;:{&quot;frame_type_bits&quot;:true}},&quot;selectedPhy&quot;:&quot;PHY_Datasheet_2450M_2GFSK_2Mbps_1M&quot;}</metadata>
+      <phy name="serializableObject:Efr32RadioConfiguratorPhy:JUMBO:Base:PHY_Datasheet_868M_2GFSK_500Kbps_125K"/>
+      <metadata>{&quot;errors&quot;:{},&quot;warnings&quot;:{},&quot;disabledGizmos&quot;:{&quot;frame_type_2_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_2_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_2_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_length&quot;:{&quot;frame_type_bits&quot;:true}}}</metadata>
       <channel_config_entries>
         <channel_config_entry name="Channel Group 1">
+          <base_frequency>2450000000</base_frequency>
+          <channel_spacing>1000000</channel_spacing>
           <physical_channel_offset>SAME_AS_FIRST_CHANNEL</physical_channel_offset>
           <channel_number_start>0</channel_number_start>
-          <channel_number_end>20</channel_number_end>
+          <channel_number_end>0</channel_number_end>
           <max_power>RAIL_TX_POWER_MAX</max_power>
           <profile_input_overrides>
             <override>
               <key>BITRATE</key>
-              <value>int:2000000</value>
+              <value>int:250000</value>
             </override>
             <override>
               <key>DEVIATION</key>
-              <value>int:1000000</value>
+              <value>int:125000</value>
             </override>
           </profile_input_overrides>
           <metadata>{&quot;customChannel&quot;:true,&quot;errors&quot;:{},&quot;warnings&quot;:{},&quot;disabledGizmos&quot;:{&quot;frame_type_2_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_2_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_2_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_length&quot;:{&quot;frame_type_bits&quot;:true}}}</metadata>
         </channel_config_entry>
         <channel_config_entry name="Channel Group 2">
           <base_frequency>868000000</base_frequency>
-          <channel_spacing>1000000</channel_spacing>
-          <physical_channel_offset>21</physical_channel_offset>
-          <channel_number_start>21</channel_number_start>
-          <channel_number_end>41</channel_number_end>
+          <channel_spacing>0</channel_spacing>
+          <physical_channel_offset>SAME_AS_FIRST_CHANNEL</physical_channel_offset>
+          <channel_number_start>1</channel_number_start>
+          <channel_number_end>1</channel_number_end>
           <max_power>RAIL_TX_POWER_MAX</max_power>
           <profile_input_overrides>
             <override>
               <key>BITRATE</key>
-              <value>int:500000</value>
+              <value>int:50000</value>
             </override>
             <override>
               <key>DEVIATION</key>
-              <value>int:125000</value>
+              <value>int:25000</value>
             </override>
           </profile_input_overrides>
           <metadata>{&quot;errors&quot;:{},&quot;warnings&quot;:{},&quot;disabledGizmos&quot;:{&quot;frame_type_2_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_2_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_2_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_3_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_4_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_5_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_6_length&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_valid&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_filter&quot;:{&quot;frame_type_bits&quot;:true},&quot;frame_type_7_length&quot;:{&quot;frame_type_bits&quot;:true}},&quot;customChannel&quot;:true}</metadata>

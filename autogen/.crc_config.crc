@@ -1,18 +1,27 @@
 #CRC Codes for initially generated config files -- do not modify!
-#Thu Jan 07 12:09:36 CET 2021
+#Wed Feb 10 14:21:15 CET 2021
 sl_device_init_lfxo_config.h=-1054644319
-sl_mx25_flash_shutdown_config.h=1547543876
-sl_sleeptimer_config.h=-386016533
-sl_device_init_dcdc_config.h=-870566101
-sl_device_init_emu_config.h=-1292589747
-sl_rail_util_pa_config.h=-1894391057
-sl_rail_util_init_config.h=1464017359
+sl_sleeptimer_config.h=-1879962229
+sl_simple_led_led0_config.h=862272308
 sl_uartdrv_usart_vcom_config.h=1706340396
-rail/radio_settings.radioconf=1938397198
-FreeRTOSConfig.h=2044837289
+sl_mx25_flash_shutdown_usart_config.h=-1552923407
+rail/radio_settings.radioconf=-2120590120
+FreeRTOSConfig.h=142173558
 sl_device_init_hfxo_config.h=1759380754
 uartdrv_config.h=-941504238
-sl_board_control_config.h=1056508041
-dmadrv_config.h=145163010
 sl_power_manager_config.h=250630329
+dmadrv_config.h=145163010
+sl_simple_led_led1_config.h=-1969224962
+rail/long_range_profile.restriction=-793959153
+rail/wisun_profile.restriction=56898073
+sl_rail_util_init_inst0_config.h=192565723
+sl_device_init_dcdc_config.h=-870566101
+rail/base_profile.restriction=-1980215595
+sl_device_init_emu_config.h=-1292589747
+sl_rail_util_pa_config.h=-1052219151
+sl_rail_util_rssi_config.h=623184445
+sl_rail_util_protocol_config.h=-119702097
+sl_rail_util_pti_config.h=-863682520
+sl_board_control_config.h=1056508041
 sl_memory_config.h=687128566
+sl_flex_assert_config.h=-293406263

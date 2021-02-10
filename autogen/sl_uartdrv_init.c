@@ -40,7 +40,7 @@ UARTDRV_InitUart_t sl_uartdrv_usart_init_vcom = {
   .portLocationTx = SL_UARTDRV_USART_VCOM_TX_LOC,
   .portLocationRx = SL_UARTDRV_USART_VCOM_RX_LOC,
 #elif defined(_USART_ROUTE_MASK)
-  .portLocation = {SL_UARTDRV_USART_VCOM_ROUTE_LOC},
+  .portLocation = SL_UARTDRV_USART_VCOM_ROUTE_LOC,
 #elif defined(_GPIO_USART_ROUTEEN_MASK)
   .txPort = SL_UARTDRV_USART_VCOM_TX_PORT,
   .rxPort = SL_UARTDRV_USART_VCOM_RX_PORT,

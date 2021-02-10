@@ -40,12 +40,12 @@
 //                          Public Function Definitions
 // -----------------------------------------------------------------------------
 /******************************************************************************
- * The function is used for some basic initialization relates to the app.
+ * The function is used for some basic initialization related to the app.
  *****************************************************************************/
 RAIL_Handle_t app_init(void)
 {
   // Get RAIL handle, used later by the application
-  RAIL_Handle_t rail_handle = sl_rail_util_get_handle();
+  RAIL_Handle_t rail_handle = sl_rail_util_get_handle(SL_RAIL_UTIL_HANDLE_INST0);
 
   /////////////////////////////////////////////////////////////////////////////
   // Put your application init code here!                                    //

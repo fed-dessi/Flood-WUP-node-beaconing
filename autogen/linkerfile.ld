@@ -181,6 +181,6 @@ SECTIONS
   linker_storage_size = SIZEOF(.internal_storage);
   __nvm3Base = linker_nvm_begin;
 
-  ASSERT( LENGTH(FLASH) >= (__etext + SIZEOF(.data)), "FLASH memory overflowed !")
+  ASSERT( (ORIGIN(FLASH) + LENGTH(FLASH)) >= (__etext + SIZEOF(.data)), "FLASH memory overflowed !")
   ASSERT( (ORIGIN(RAM) + LENGTH(RAM)) >= (__HeapBase + SIZEOF(.heap)), "RAM memory overflowed !")
 }

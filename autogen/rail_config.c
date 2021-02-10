@@ -2,7 +2,7 @@
  * @brief RAIL Configuration
  * @details
  *   WARNING: Auto-Generated Radio Config  -  DO NOT EDIT
- *   Radio Configurator Version: 5.8.2
+ *   Radio Configurator Version: 5.10.1
  *   RAIL Adapter Version: 2.4.13
  *   RAIL Compatibility: 2.x
  *******************************************************************************
@@ -54,11 +54,11 @@ void RAILCb_ConfigFrameTypeLength(RAIL_Handle_t railHandle,
 }
 
 static const uint8_t irCalConfig_0[] = {
-  25, 63, 1, 6, 4, 16, 1, 0, 0, 1, 1, 6, 0, 16, 39, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0
+  25, 63, 1, 6, 4, 16, 1, 0, 0, 1, 1, 6, 0, 16, 39, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0
 };
 
 static const uint8_t irCalConfig_1[] = {
-  25, 69, 3, 6, 4, 16, 0, 1, 1, 3, 1, 6, 0, 16, 39, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0
+  25, 69, 3, 6, 4, 16, 0, 1, 1, 3, 1, 6, 0, 16, 39, 0, 0, 5, 0, 1, 1, 0, 0, 0, 0, 0
 };
 
 static RAIL_ChannelConfigEntryAttr_t channelConfigEntryAttr_0 = {
@@ -70,8 +70,8 @@ static RAIL_ChannelConfigEntryAttr_t channelConfigEntryAttr_1 = {
 };
 
 static const uint32_t phyInfo_0[] = {
-  7UL,
-  0x00C30C30UL, // 195.04761904761907
+  8UL,
+  0x001D41D4UL, // 29.257142857142853
   (uint32_t) NULL,
   (uint32_t) irCalConfig_0,
 #ifdef RADIO_CONFIG_ENABLE_TIMING
@@ -80,18 +80,19 @@ static const uint32_t phyInfo_0[] = {
   (uint32_t) NULL,
 #endif
   0x00000000UL,
-  7200000UL,
-  42000000UL,
-  2000000UL,
+  10000000UL,
+  35000000UL,
+  250000UL,
   (1UL << 8) | 1UL,
-  0x02004C44UL,
+  0x020013C2UL,
+  (uint32_t) NULL,
   (uint32_t) NULL,
   (uint32_t) NULL,
 };
 
 static const uint32_t phyInfo_1[] = {
-  7UL,
-  0x00618618UL, // 97.52380952380952
+  8UL,
+  0x001135C8UL, // 17.210084033613445
   (uint32_t) NULL,
   (uint32_t) irCalConfig_1,
 #ifdef RADIO_CONFIG_ENABLE_TIMING
@@ -100,11 +101,12 @@ static const uint32_t phyInfo_1[] = {
   (uint32_t) NULL,
 #endif
   0x00000000UL,
-  7200000UL,
-  31500000UL,
-  500000UL,
+  10200000UL,
+  35700000UL,
+  50000UL,
   (1UL << 8) | 1UL,
-  0x0600E4CCUL,
+  0x0600231CUL,
+  (uint32_t) NULL,
   (uint32_t) NULL,
   (uint32_t) NULL,
 };
@@ -130,23 +132,24 @@ const uint32_t Protocol_Configuration_modemConfigBase[] = {
   0x00012018UL, 0x0000A001UL,
   0x00013008UL, 0x0100AC13UL,
   0x00013040UL, 0x00000000UL,
-  0x000140B8UL, 0x00F3C000UL,
   0x000140F4UL, 0x00001020UL,
-  0x00024140UL, 0x0088006DUL,
-  /*    4144 */ 0x4D52E6C0UL,
   0x00044160UL, 0x00000000UL,
   /*    4164 */ 0x00000000UL,
   /*    4168 */ 0x00000006UL,
   /*    416C */ 0x00000006UL,
-  0x00026014UL, 0x00000010UL,
+  0x00086014UL, 0x00000010UL,
   /*    6018 */ 0x04000000UL,
-  0x00056020UL, 0x00005000UL,
+  /*    601C */ 0x0001400FUL,
+  /*    6020 */ 0x00005000UL,
   /*    6024 */ 0x00000000UL,
   /*    6028 */ 0x03000000UL,
   /*    602C */ 0x00000000UL,
   /*    6030 */ 0x00000000UL,
-  0x00026060UL, 0x0000B16FUL,
+  0x0003605CUL, 0x00140012UL,
+  /*    6060 */ 0x0000B16FUL,
   /*    6064 */ 0x00000000UL,
+  0x00026078UL, 0x08E0081FUL,
+  /*    607C */ 0x00000000UL,
   0x00096084UL, 0x00000000UL,
   /*    6088 */ 0x00000000UL,
   /*    608C */ 0x22140A04UL,
@@ -162,16 +165,12 @@ const uint32_t Protocol_Configuration_modemConfigBase[] = {
   /*    60F4 */ 0x0006209CUL,
   /*    60F8 */ 0x00206100UL,
   /*    60FC */ 0x208556B7UL,
-  0x00036104UL, 0x0011C997UL,
-  /*    6108 */ 0x00003020UL,
+  0x00026108UL, 0x00003020UL,
   /*    610C */ 0x0000BB88UL,
   0x00016120UL, 0x00000000UL,
   0x10017014UL, 0x0007F800UL,
-  0x30017014UL, 0x000000F8UL,
-  0x00047018UL, 0x00000300UL,
-  /*    701C */ 0x84EA0060UL,
-  /*    7020 */ 0x00000000UL,
-  /*    7024 */ 0x00000082UL,
+  0x30017014UL, 0x000000FEUL,
+  0x00017018UL, 0x00000300UL,
   0xFFFFFFFFUL,
 };
 
@@ -183,26 +182,29 @@ const uint32_t Channel_Group_1_modemConfig[] = {
   0x00030038UL, 0x00000000UL,
   /*    003C */ 0x00000000UL,
   /*    0040 */ 0x00000700UL,
-  0x00023030UL, 0x00104C44UL,
+  0x00023030UL, 0x001013C2UL,
   /*    3034 */ 0x00000001UL,
   0x000140A0UL, 0x0F00277AUL,
+  0x000140B8UL, 0x0083C000UL,
   0x00024134UL, 0x00000880UL,
   /*    4138 */ 0x000087E6UL,
-  0x0001601CUL, 0x0001000FUL,
-  0x00046050UL, 0x00FF0264UL,
+  0x00024140UL, 0x008800A0UL,
+  /*    4144 */ 0x4D52E6C1UL,
+  0x00036050UL, 0x00FF1320UL,
   /*    6054 */ 0x00000C41UL,
-  /*    6058 */ 0x00000000UL,
-  /*    605C */ 0x00140092UL,
-  0x00036078UL, 0x08E00813UL,
-  /*    607C */ 0x00000000UL,
-  /*    6080 */ 0x003B0011UL,
-  0x000160E4UL, 0xCBA80080UL,
-  0x00027028UL, 0x01800000UL,
+  /*    6058 */ 0x00000022UL,
+  0x00016080UL, 0x003B03B1UL,
+  0x000160E4UL, 0x8C5B0881UL,
+  0x00016104UL, 0x00109E0FUL,
+  0x0005701CUL, 0x834A0060UL,
+  /*    7020 */ 0x00000000UL,
+  /*    7024 */ 0x00000082UL,
+  /*    7028 */ 0x01800000UL,
   /*    702C */ 0x000000D5UL,
   0x00027048UL, 0x00003D3CUL,
   /*    704C */ 0x000019BCUL,
-  0x00037070UL, 0x00220105UL,
-  /*    7074 */ 0x00083016UL,
+  0x00037070UL, 0x00120105UL,
+  /*    7074 */ 0x00083027UL,
   /*    7078 */ 0x00552300UL,
   0xFFFFFFFFUL,
 };
@@ -215,26 +217,29 @@ const uint32_t Channel_Group_2_modemConfig[] = {
   0x00030038UL, 0x00000000UL,
   /*    003C */ 0x00000000UL,
   /*    0040 */ 0x00000700UL,
-  0x00023030UL, 0x0010E4CCUL,
+  0x00023030UL, 0x0010231CUL,
   /*    3034 */ 0x00000003UL,
   0x000140A0UL, 0x0F0027AAUL,
+  0x000140B8UL, 0x0023C000UL,
   0x00024134UL, 0x00000880UL,
   /*    4138 */ 0x000087F6UL,
-  0x0001601CUL, 0x0001400FUL,
-  0x00046050UL, 0x00FF0990UL,
+  0x00024140UL, 0x00880020UL,
+  /*    4144 */ 0x4D52E6C1UL,
+  0x00036050UL, 0x00FF5FA0UL,
   /*    6054 */ 0x00000C41UL,
-  /*    6058 */ 0x00040000UL,
-  /*    605C */ 0x00140012UL,
-  0x00036078UL, 0x08E0081FUL,
-  /*    607C */ 0x00000000UL,
-  /*    6080 */ 0x003A03D9UL,
-  0x000160E4UL, 0xCCE00080UL,
-  0x00027028UL, 0x00000000UL,
+  /*    6058 */ 0x00000108UL,
+  0x00016080UL, 0x003B0390UL,
+  0x000160E4UL, 0x8C56087FUL,
+  0x00016104UL, 0x00104637UL,
+  0x0005701CUL, 0x830A0060UL,
+  /*    7020 */ 0x00000000UL,
+  /*    7024 */ 0x00000082UL,
+  /*    7028 */ 0x00000000UL,
   /*    702C */ 0x000000D5UL,
   0x00027048UL, 0x0000383EUL,
   /*    704C */ 0x000025BCUL,
   0x00037070UL, 0x00120105UL,
-  /*    7074 */ 0x00083007UL,
+  /*    7074 */ 0x00083031UL,
   /*    7078 */ 0x006D8480UL,
   0xFFFFFFFFUL,
 };
@@ -242,11 +247,11 @@ const uint32_t Channel_Group_2_modemConfig[] = {
 const RAIL_ChannelConfigEntry_t Protocol_Configuration_channels[] = {
   {
     .phyConfigDeltaAdd = Channel_Group_1_modemConfig,
-    .baseFrequency = 2400000000,
+    .baseFrequency = 2450000000,
     .channelSpacing = 1000000,
     .physicalChannelOffset = 0,
     .channelNumberStart = 0,
-    .channelNumberEnd = 20,
+    .channelNumberEnd = 0,
     .maxPower = RAIL_TX_POWER_MAX,
     .attr = &channelConfigEntryAttr_0,
 #ifdef RADIO_CONFIG_ENABLE_CONC_PHY
@@ -256,10 +261,10 @@ const RAIL_ChannelConfigEntry_t Protocol_Configuration_channels[] = {
   {
     .phyConfigDeltaAdd = Channel_Group_2_modemConfig,
     .baseFrequency = 868000000,
-    .channelSpacing = 1000000,
-    .physicalChannelOffset = 21,
-    .channelNumberStart = 21,
-    .channelNumberEnd = 41,
+    .channelSpacing = 0,
+    .physicalChannelOffset = 1,
+    .channelNumberStart = 1,
+    .channelNumberEnd = 1,
     .maxPower = RAIL_TX_POWER_MAX,
     .attr = &channelConfigEntryAttr_1,
 #ifdef RADIO_CONFIG_ENABLE_CONC_PHY
@@ -281,4 +286,4 @@ const RAIL_ChannelConfig_t *channelConfigs[] = {
   NULL
 };
 
-uint32_t protocolAccelerationBuffer[125];
+uint32_t protocolAccelerationBuffer[119];

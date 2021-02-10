@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <model:MDescriptors xmlns:model="http://www.silabs.com/ss/Studio.ecore">
   <descriptors name="flood_wup_node_beaconing">
-    <properties key="projectCommon.sdkId" value="com.silabs.sdk.stack.super:3.0.2._1594811387"/>
+    <properties key="projectCommon.sdkId" value="com.silabs.sdk.stack.super:3.1.1._-1681676178"/>
     <properties key="universalConfig.generationDirectory" value="C:\Users\Federico\SimplicityStudio\v5_workspace\flood wup node beaconing"/>
     <properties key="universalConfig.toolchainCompatibility" value="iar gcc"/>
     <properties key="projectCommon.boardIds" value="brd4001a:0.0.0.A01 brd4170a:0.0.0.A00"/>
